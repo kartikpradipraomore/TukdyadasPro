@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gramgeeta</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+   
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: List of all Adhyay -->
+    <main>
+      <div class="heading_container">
+        <h1>ग्रामगीता-अध्याय सूची</h1>
+      </div>
+
+       <div class="search_container">
+        <form action="/search" method="GET" class="search_container_form">
+            <input
+                type="text"
+                name="query"
+                placeholder="Search..."
+                class="search_bar"
+            />
+            <button type="submit" class="search_button">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>क्रमांक</th>
+            <!-- This is the numbering column header -->
+            <th>अध्याय</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% adhyayList.forEach(function(adhyay, index) { %>
+          <!-- Added index parameter -->
+          <tr>
+            <td><%= index + 1 %></td>
+            <!-- This is the numbering cell -->
+            <td>
+              <a href="/gramgeeta/<%= adhyay.id %>"><%= adhyay.gramgeeta_title %></a>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <% if (page > 1) { %>
+        <a href="/gramgeeta?page=<%= page - 1 %> ">Previous</a>
+        <% } %>
+
+        <span>Page <%= page %> of <%= totalPages %></span>
+
+        <% if (page < totalPages) { %>
+        <a href="/gramgeeta?page=<%= page + 1 %>">Next</a>
+        <% } %>
+      </div>
+            
+    </main>
+
+    <!-- Footer -->
+        <%- include('partials/footer') %>
+  </body>
+</html>

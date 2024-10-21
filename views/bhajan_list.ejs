@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>भजने</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: List of Bhajans -->
+    <main>
+        <h2>मराठी भजने</h2>
+        <table class="styled-table2">
+            <thead>
+                <tr>
+                     <th>क्रमांक</th>
+                    <th>भजन</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bhajans.forEach(function(bhajan,index) { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><a href="/bhajan/<%= bhajan.id %>"><%= bhajan.title %></a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <% if (page > 1) { %>
+                <a href="/bhajan-books/<%= bookId %>?page=<%= page - 1 %>">Previous</a>
+            <% } %>
+            <span>Page <%= page %> of <%= totalPages %></span>
+            <% if (page < totalPages) { %>
+                <a href="/bhajan-books/<%= bookId %>?page=<%= page + 1 %>">Next</a>
+            <% } %>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+</body>
+</html>

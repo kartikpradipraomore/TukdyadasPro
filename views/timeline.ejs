@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .post-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+        }
+
+        .article{
+            /* background-color: #f0f0f0; */
+            padding: 20px;
+            width: 70%;
+            text-align: center;
+        }
+
+        @media (max-width : 480px) {
+
+
+            .post-container{
+            width: 90%;
+        }           
+            
+
+            .article{
+            padding: 10px;
+            width: 100%;
+           
+        }
+            
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: Timeline Posts -->
+    <main>
+       
+        <div class="heading_container">
+             <h1>पोस्ट</h1>
+
+        </div>
+
+        <% posts.forEach(function(post) { %>
+            <div class="post-container">
+                <% if (post.media_type === 'image') { %>
+                    <img src="<%= post.media %>" alt="Post Image" class="post-media">
+                <% } else if (post.media_type === 'video') { %>
+                    <video controls class="post-media">
+                        <source src="<%= post.media %>" type="video/mp4">
+                    </video>
+                <% } %>
+
+                <h2 class="post-title"><%= post.title %></h2>
+                <div class="article">
+                    <p class="post-article"><%= post.article %></p>
+                </div>
+            </div>
+        <% }); %>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <% if (currentPage > 1) { %>
+                <a href="/timeline?page=<%= currentPage - 1 %>">Previous</a>
+            <% } %>
+
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <a href="/timeline?page=<%= i %>" class="<%= currentPage === i ? 'active' : '' %>"><%= i %></a>
+            <% } %>
+
+            <% if (currentPage < totalPages) { %>
+                <a href="/timeline?page=<%= currentPage + 1 %>">Next</a>
+            <% } %>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Spiritual Website</p>
+    </footer>
+
+    <style>
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .pagination a:hover {
+            background-color: #0056b3;
+        }
+
+        .pagination a.active {
+            background-color: #0056b3;
+            font-weight: bold;
+        }
+    </style>
+    
+</body>
+</html>

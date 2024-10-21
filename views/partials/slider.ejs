@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/slider.css">
+    <title>Image Slider</title>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+            <div class="slide first">
+                <div class="info-box">
+                    <p>श्री तुकडोजी महाराज यांच्या जीवनाची थोडक्यात माहिती</p>
+                    <button onclick="window.location.href='/about'">आणखी वाचा</button>
+                </div>
+                <img src="/images/slider-01.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <!-- <div class="info-box">
+                    <p>Some information about Image 2</p>
+                    <button onclick="window.location.href='/page2'">Read More</button>
+                </div> -->
+                <img src="/images/slider-02.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <!-- <div class="info-box">
+                    <p>Some information about Image 3</p>
+                    <button onclick="window.location.href='/page3'">Read More</button>
+                </div> -->
+                <img src="/images/slider-03.jpg" alt="Image 3">
+            </div>
+
+            <!-- Automatic navigation -->
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+        </div>
+
+        <!-- Manual navigation -->
+        <div class="nav-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

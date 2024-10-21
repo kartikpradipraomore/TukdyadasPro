@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राष्ट्रसंत श्री तुकडोजी महाराज</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader-content">
+            <h1 class="preloader-text">तुकड्यादास</h1>
+            <div class="spinner-square"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <%- include('partials/header') %> 
+
+    <!-- Main Content -->
+    <main id="home_main">
+        <section id="left_section">
+            <div class="info-box">
+                <img src="/images/aboutphoto.jpg" alt="Owner" class="round-photo" />
+                <!-- Container for the short text -->
+                <p class="summary-text" class="truncate">
+                    तुकडोजी महाराज का जीवन एक प्रेरणादायक और अद्वितीय उदाहरण है, जो
+                    सामाजिक सुधार, अध्यात्म, और राष्ट्रसेवा को समर्पित था। उनका जन्म 30
+                    अप्रैल 1909 को महाराष्ट्र के अमरावती जिले के यावली गांव में हुआ था।
+                    उनका मूल नाम माणिक बंडोजी इंगले था, लेकिन बाद में वे तुकडोजी महाराज
+                    के नाम से प्रसिद्ध हुए। बचपन से ही उनका झुकाव आध्यात्मिकता और साधना
+                    की ओर था।
+                </p>
+                <button id="see-more-btn" onclick="window.location.href='/about'">और पढ़िए</button>
+            </div>
+        </section>
+
+        <section id="middle-section">
+            <div class="post-container">
+                <% if (post) { %> 
+                    <% if (post.media_type === 'image') { %>
+                        <!-- Display Image with specific size and aspect ratio maintained -->
+                        <img src="<%= post.media %>" alt="Daily Post Image" class="post-media">
+                    <% } else if (post.media_type === 'video') { %>
+                        <!-- Display Video with specific size and aspect ratio maintained -->
+                        <video controls class="post-media">
+                            <source src="<%= post.media %>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <% } %>
+                    <!-- Post Title -->
+                    <h2 class="post-title"><%= post.title %></h2>
+                    <!-- Post Article -->
+                    <p class="post-article summary-text2"><%= post.article %></p>
+                <% } else { %>
+                    <p>No post available at the moment.</p>
+                <% } %>
+                <button id="see-more-btn" onclick="window.location.href='/timeline'">और पोस्ट</button>
+            </div>
+        </section>
+
+        <!-- Right Section: Sliding Prayer Text -->
+        <section id="right-section">
+            <h2 class="slider-title">सामुदायिक प्रार्थना</h2>
+            <!-- Sliding Text -->
+            <div class="prayer-text-container">
+                <div class="prayer-text">
+                    <p>है प्रार्थना गुरुदेव से ,यह स्वर्ग सम संसार हो। अति उच्चतम जीवन बने, परमार्थमय व्यवहार हो।।</p>
+                    <p>ना हम रहे अपने लिए , हम को सभी से गर्ज है। गुरुदेव यह आशीष दो ,जो सोचने का फर्ज है।। ।।1।।</p>
+                    <p>हम हो पुजारी तत्व के, गुरुदेव के आदेश के। सच प्रेम के नित नेम के, सत धर्म के सत्कर्म के।।</p>
+                    <p>हो चीड़ झूठी राह की , अन्याय की अभिमान की। सेवा करण को दास की ,परवाह नहीं हो जान की।।।।2।।</p>
+                    <p>छोटे ना हो हम बुद्धि से, हो विश्वमय से ईशमय। हो राममय अरू कृष्णमय ,जगदेवमय जगदीशमय।।</p>
+                    <p>हर इंद्रियों पर ताव कर, हम वीर हो अति धीर हो। उज्जवल रहे सर से सदा ,निज धर्म रथ खंभीर हो।।।।3।।</p>
+                    <p>यह डर सभी जाता रहे ,मन बुद्धि का इस देह का। निर्भय रहे हम कर्म में, पर्दा खुला स्नेह का।।</p>
+                    <p>गाते रहे प्रभु नाम पर, प्रभुतत्व पाने के लिए। हो ब्रह्मा विद्या का उदय ,यह जी तराने के लिए।।।।4।।</p>
+                    <p>अति शुद्ध हो आचार से, तन मन हमारा सर्वदा। अध्यात्म की शक्ति हमें, पल भी नहीं करदे जुदा।।</p>
+                    <p>इस अमर आत्मा का हमें, हर श्वास भर में गम रहे। गर मौत भी आ जाएगी, सुख दुख हम में सम रहे।।।।5।।</p>
+                    <p>गुरुदेव तेरी अमर ज्योति, का हमें निज ज्ञान हो सत ज्ञान ही तू है सदा ,यह विश्व भर में ध्यान हो।।</p>
+                    <p>तुझ में नहीं है पंथ भी, ना जात भी ना देश भी। तू है निरामय एक रस है, व्याप्त भी अरू शेष भी।। ।।6।।</p>
+                    <p>गुणधर्म दुनिया में बढ़े, हर जीव से कर्तव्य हो। गंभीर हो सबके हृदय ,सच ज्ञान का वक्तव्य हो।।</p>
+                    <p>यह दूर हो सब भावना ,हम नीच है अस्प्रश्य है। हर जीव का हो शुद्ध मन, जब कर्म उनके स्प्रृश्य है।।।।7।।</p>
+                    <p>हम भिन्न हो इस देह से, पर तत्व से सब एक है। हो ज्ञान सब में एक ही, जिससे मनुज निःशक हो।।</p>
+                    <p>तुकड़या कहे ऐसा अमर पद, प्राप्त हो संसार में। छोड़े नहीं घर बार पर ,हो मस्त गुरु चरणार में।।</p>
+                </div>
+            </div>
+        </section>
+
+       
+         
+    </main>
+
+     <!-- Footer -->
+    <%- include('partials/footer') %>
+   
+</body>
+</html>

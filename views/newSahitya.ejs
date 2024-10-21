@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नवीन साहित्य</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Include main styles if needed -->
+    <style>
+        /* CSS specific to newSahitya page */
+
+        /* Main content styling */
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #faf3dd; /* Light background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #4b2e10; /* Same color as in header */
+            margin-bottom: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            background-color: white;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9; /* Hover effect on rows */
+        }
+
+        td a {
+            text-decoration: none;
+            color: #ff6600; /* Link color */
+            transition: color 0.3s ease;
+        }
+
+        td a:hover {
+            color: #4b2e10; /* Hover color */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            main {
+                padding: 15px;
+            }
+
+            table, th, td {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header will be included here -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: List of Books -->
+    <main>
+        <h2>नवीन साहित्य</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% books.forEach(function(book, index) { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><a href="/sahitya/<%= book.id %>"><%= book.title %></a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+              
+    </main>
+
+    <!-- Footer -->
+        <%- include('partials/footer') %>
+
+
+</body>
+</html>

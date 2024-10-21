@@ -1,0 +1,907 @@
+/* Overall Page Styles */
+html,
+body {
+    font-family: 'Devanagri', sans-serif;
+    background-color: #F4E4C1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#home_main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #F4E4C1;
+}
+
+/* Left Section (Owner Info) */
+#left_section {
+    text-align: center;
+    background-color: #F4E4C1;
+    /* Light peach color */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 10px;
+    width: 30%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#left_section button {
+    margin-top: 10px;
+    padding: 12px 25px;
+    background-color: #800020;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#left_section button:hover {
+    background-color: #d4af37;
+}
+
+/* ================================================================================================================================================================================================================= */
+
+.info-box {
+    color: #4B2E10;
+    width: 100%;
+}
+
+.info-box img {
+    width: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.summary-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.summary-text2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+/* ================================================================================================================================================================================================================= */
+
+/* Middle Section */
+#middle-section {
+    width: 60%;
+    margin: 20px 10px;
+    padding: 0px;
+    background-color: #F4E4C1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.post-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#middle-section button {
+    margin-top: 10px;
+    padding: 12px 25px;
+    background-color: #800020;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#middle-section button:hover {
+    background-color: #d4af37;
+}
+
+
+
+
+.post-media {
+    width: 100%;
+    /* Ensures it takes the full width of the container */
+    max-width: 600px;
+    /* Set the maximum width for the media */
+    max-height: 400px;
+    /* Set the maximum height for the media */
+    display: block;
+    margin: 0 auto;
+    /* Center the media */
+    object-fit: contain;
+    /* Ensures the whole image/video fits without being cut or stretched */
+    border-radius: 8px;
+    /* Optional: rounded corners */
+}
+
+/* Post Title and Article styling */
+.post-title {
+    font-family: 'Devanagari', sans-serif;
+    font-size: 24px;
+    color: #4b2e10;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.post-article {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+/* .post-media {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.post-title {
+    font-family: 'Devanagari', sans-serif;
+    font-size: 24px;
+    color: #4b2e10;
+    margin-top: 10px;
+}
+
+.post-article {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 10px;
+    text-align: justify;
+} */
+
+/* ========================================================================================================================================================================================== */
+/* Right Section (Sliding Prayer) */
+
+#right-section {
+    background-color: #F4E4C1;
+    /* Light peach color */
+    padding: 50px;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+    margin: 20px 10px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title at the Top of the Sliding Text */
+
+.slider-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4b2e10;
+    margin-bottom: 50px;
+    position: absolute;
+    top: 0;
+    left: 25%;
+
+}
+
+
+/* Sliding Prayer Text Container */
+.prayer-text-container {
+    height: 400px;
+    /* Fixed height for sliding area */
+    overflow: hidden;
+    position: relative;
+    margin-top: 25px;
+    width: 100%;
+    /* Space for the title below the slider */
+}
+
+/* The Sliding Text */
+.prayer-text {
+    animation: slideUp 60s linear infinite;
+    /* Adjusted to 60 seconds for moderate scrolling */
+}
+
+.prayer-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+    text-align: center;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    10% {
+        transform: translateY(0);
+        /* Start appearing faster */
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    #home_main {
+        flex-direction: column;
+        /* Change to column for mobile devices */
+    }
+
+
+    .info-box img {
+        width: 70%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    #left_section,
+    #middle-section,
+    #right-section {
+        width: 90%;
+        /* Full width for mobile devices */
+        margin: 1px 0;
+        /* Adjust margin for mobile */
+        padding: 20px;
+        /* Adjust padding for mobile */
+        border-radius: 0;
+        /* Remove border-radius for mobile */
+    }
+
+    .post-container {
+        width: 90%;
+        /* Full width for mobile devices */
+    }
+
+    .post-media {
+        width: 100%;
+        /* Full width for mobile devices */
+    }
+
+    .prayer-text-container {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        margin-top: 55px;
+        width: 100%;
+        /* Space for the title below the slider */
+    }
+
+
+}
+
+/* ===================================================================================================================================================================================================== */
+/* Book Details */
+.book-content {
+    margin-top: 20px;
+    font-size: 48px;
+}
+
+.book-section {
+    margin-bottom: 30px;
+}
+
+.book-section h3 {
+    font-size: 24px;
+    color: #4b2e10;
+}
+
+.book-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ================================================================================================================================= */
+/* Main container */
+main {
+    width: 100%;
+    /* height: 100vh; */
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+    background-color: #F4E4C1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.heading_container {
+    background-color: #F4E4C1;
+    height: 80px;
+    margin-bottom: 10px;
+    color: #4B2E10;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px dotted black;
+}
+
+.heading_container h1 {
+    font-size: 2rem;
+}
+
+/* =============================================================================================================================================== */
+.search_container {
+    margin-bottom: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_bar {
+    height: 40px;
+    width: 830px;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #333;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: #F4E4C1;
+}
+
+.search_container_form {
+    /* background-color: #0056b3; */
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.search_button {
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.search_button i {
+    font-size: 18px;
+}
+
+.search_button:hover {
+    background-color: #555;
+}
+
+.search_button:focus {
+    outline: none;
+}
+
+
+@media (max-width: 930px) {
+    .search_bar {
+        width: 700px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .search_bar {
+        width: 600px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .search_bar {
+        width: 500px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .search_bar {
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .search_bar {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .search_bar {
+        width: 300px;
+    }
+
+}
+
+/* ============================================================================================================================================================================================================= */
+/* Styling the table */
+.styled-table {
+
+    width: 60%;
+    margin: 0px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.styled-table thead tr {
+    background-color: #e7c8a4;
+    border-bottom: 2px solid #e67e22;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e67e22;
+
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #F4E4C1;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #F4E4C1;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f6dfae;
+}
+
+.styled-table th {
+    font-weight: bold;
+    color: #4B2E10;
+}
+
+.styled-table tbody tr td {
+    color: #4B2E10;
+}
+
+/* Remove underline and set link color to match the text color */
+.styled-table tbody tr a {
+    text-decoration: none;
+    color: inherit;
+    background-color: #4b2e10;
+
+}
+
+/* Ensure consistent background color on odd rows */
+.styled-table tbody tr a:nth-child(odd) {
+    background-color: #F4E4C1;
+}
+
+
+@media (max-width: 1280px) {
+
+    .styled-table {
+        width: 70%;
+        /* text-align: center; */
+    }
+
+}
+
+
+@media (max-width: 1150px) {
+
+    .styled-table {
+        width: 80%;
+        /* text-align: center; */
+    }
+
+}
+
+@media (max-width: 930px) {
+
+    .styled-table {
+        width: 90%;
+        /* text-align: center; */
+    }
+
+}
+
+
+/* ====== Table styling for center ==================================================================================================================== */
+/* Styling the table */
+.styled-table2 {
+
+    width: 60%;
+    margin: 0px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.styled-table2 thead tr {
+    background-color: #e7c8a4;
+    border-bottom: 2px solid #e67e22;
+}
+
+.styled-table2 th,
+.styled-table2 td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e67e22;
+
+}
+
+.styled-table2 tbody tr:nth-child(even) {
+    background-color: #F4E4C1;
+}
+
+.styled-table2 tbody tr:nth-child(odd) {
+    background-color: #F4E4C1;
+}
+
+.styled-table2 tbody tr:hover {
+    background-color: #f6dfae;
+}
+
+.styled-table2 th {
+    font-weight: bold;
+    color: #4B2E10;
+}
+
+.styled-table2 tbody tr td {
+    color: #4B2E10;
+}
+
+/* Remove underline and set link color to match the text color */
+.styled-table2 tbody tr a {
+    text-decoration: none;
+    color: inherit;
+    background-color: #4b2e10;
+
+}
+
+/* Ensure consistent background color on odd rows */
+.styled-table2 tbody tr a:nth-child(odd) {
+    background-color: #F4E4C1;
+}
+
+
+
+@media (max-width: 930px) {
+
+    .styled-table2 {
+        width: 90%;
+        /* text-align: center; */
+    }
+
+}
+
+
+/* ========================================================================================================================================================================================================================================== */
+/* General Styles */
+body {
+    background-color: #F9F6EE; /* Soft off-white for a book-like background */
+    font-family: 'Georgia', serif; /* Book-style serif font */
+    color: #4B2E10; /* Dark Brown text */
+    line-height: 1.8; /* Better readability */
+    padding: 20px;
+}
+
+/* Section Styling */
+#about-section {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #F4E4C1; /* White background for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Image Styling */
+.round-photo-large {
+    float: left;
+    margin: 0 20px 20px 0; /* Float images to the left with margin */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow around images */
+    width: 300px; /* Fixed width for images */
+}
+
+/* Headings */
+h2 {
+    color: #800020; /* Deep red for subheadings */
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #D4AF37; /* Gold underline for headings */
+    padding-bottom: 5px;
+}
+
+/* Paragraphs */
+p {
+    text-align: center; /* Justify text for a clean look */
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #800020;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Clear floats after images */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+/* ========================================================================================================================================================================================================================================================== */
+
+/* Paginations */
+
+.pagination {
+    text-align: center;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+}
+
+.pagination a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.pagination span {
+    margin: 0 10px;
+}
+
+/* ===================================================================================================================================== */
+
+
+
+/* Adhyas  Styling */
+
+.adhyay-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.adhyay-article {
+    background-color: #F4E4C1;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#adhyas_artical_text {
+    font-size: 5px;
+    font: bolder;
+}
+
+
+/* ========== Topic Styling ================================================================================================================================= */
+
+
+.topics-list {
+    background-color: #F4E4C1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.topic-section {
+    width: 70%;
+    margin-top: 10px;
+    background-color: #F4E4C1;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+}
+
+#topic-article-container{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+@media (max-width: 480px) {
+    .topic-section {
+            width: 90%;
+           
+        }
+}
+
+
+/* =======preloader==================================================================================================================================================== */
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    /* Background color */
+    z-index: 9999;
+    /* On top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Preloader Content Styling */
+.preloader-content {
+    text-align: center;
+}
+
+/* Text "तुकड्यादास" Styling */
+.preloader-text {
+    font-size: 36px;
+    /* Size of the text */
+    color: #4b2e10;
+    /* Color of the text */
+    margin-bottom: 20px;
+    /* Space between text and spinner */
+}
+
+/* Spinning Dot */
+.spinner-square {
+    width: 40px;
+    height: 40px;
+    /* border-radius:50%; */
+    margin-left: 70px;
+    /* Makes the element a circle */
+    background-color: #4b2e10;
+    /* Dot color */
+    animation: rotateSquare 1s linear infinite;
+    /* Spin animation */
+}
+
+/* Keyframes for spinning the dot */
+@keyframes rotateSquare {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hide the preloader once the content is loaded */
+body.loaded #preloader {
+    display: none;
+}
+
+/* ========================================================================================================================================== */
+
+html,
+body {
+    height: 100%;
+    /* Ensure body takes full height */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body takes the full viewport height */
+}
+
+.content {
+    flex: 1;
+    /* This makes the content take up available space */
+    padding: 20px;
+    /* Add some padding to the content */
+    background-color: #f5f5f5;
+    /* Background for the content area */
+}
+
+/* Footer Styles */
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e0a860;
+}

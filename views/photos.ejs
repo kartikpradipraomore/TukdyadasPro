@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos of Tukdoji Maharaj's Life Journey</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Styles for the photo gallery */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .gallery-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #4b2e10;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Ensures four columns */
+            gap: 20px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: 250px; /* Set specific height */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .photo-grid img:hover {
+            transform: scale(1.05);
+        }
+        /* Lightbox for viewing larger images */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .lightbox:target {
+            display: flex;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .photo-grid {
+                grid-template-columns: repeat(1, 1fr); /* One column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+    <!-- Main Content: Photo Gallery -->
+    <main>
+        <div class="gallery-container">
+            <h2>फोटो गैलरी</h2>
+            <div class="photo-grid">
+                <% photos.forEach(function(photo, index) { %>
+                    <a href="#lightbox-<%= index %>">
+                        <img src="<%= photo %>" alt="Photo <%= index + 1 %>">
+                    </a>
+                    <!-- Lightbox -->
+                    <div id="lightbox-<%= index %>" class="lightbox">
+                        <a href="#"><div class="overlay"></div></a>
+                        <img src="<%= photo %>" alt="Photo <%= index + 1 %>">
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+        
+    </main>
+    <!-- Footer -->
+        <%- include('partials/footer') %>
+</body>
+</html>

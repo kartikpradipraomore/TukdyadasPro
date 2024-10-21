@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Books Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .books-container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .books-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .book-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 20px;
+            color: #555;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-item:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <!-- Main content: List of books -->
+    <main class="books-container">
+        <h1>List of Books</h1>
+        <ul class="books-list">
+            <% books.forEach(function(book) { %>
+                <li class="book-item"><%= book.name %></li>
+            <% }); %>
+        </ul>
+
+            
+    </main>
+
+      <!-- Footer -->
+        <%- include('partials/footer') %>
+
+
+</body>
+</html>

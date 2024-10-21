@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= adhyay.title %></title>
+    <!-- Use the Adhyay title as the page title -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: Show Adhyay content -->
+    <main>
+      <!-- Centered class -->
+      <div class="heading_container">
+        <h2 class="adhyay-title"><%= adhyay.title %></h2>
+      </div>
+
+      <div class="adhyay-article">
+        <p id="adhyas_artical_text"><%- adhyay.article %></p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+  </body>
+</html>

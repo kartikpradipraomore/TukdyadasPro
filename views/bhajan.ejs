@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>भजने</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: Bhajan List -->
+    <main>
+      <div class="heading_container">
+        <h1>भजन</h1>
+      </div>
+
+      <div class="search_container">
+        <form action="/search" method="GET" class="search_container_form">
+          <input
+            type="text"
+            name="query"
+            placeholder="Search..."
+            class="search_bar"
+          />
+          <button type="submit" class="search_button">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>क्रमांक</th>
+            <th>भजन</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% bhajans.forEach(function(bhajan, index) { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><a href="/bhajan/<%= bhajan.id %>"><%= bhajan.title %></a></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+ 
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <% if (page > 1) { %>
+        <a href="/bhajan?page=<%= page - 1 %>">Previous</a>
+        <% } %>
+
+        <span>Page <%= page %> of <%= totalPages %></span>
+
+        <% if (page < totalPages) { %>
+        <a href="/bhajan?page=<%= page + 1 %>">Next</a>
+        <% } %>
+      </div>
+
+   
+      <!-- Footer -->
+        <%- include('partials/footer') %>
+    
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+     <link rel="stylesheet" href="/navbar.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Header with Tabs and Menu Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>तुकड्यादास</h1>
+                 <!-- <img class="logo" src="/public/images/sign.jpg" alt=""> -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">होम</a></li>
+                <li><a href="/sahitya">साहित्य</a></li>
+                <li><a href="/gramgeeta">ग्रामगीता</a></li>
+                <li><a href="/bhajan">भजन</a></li>
+                <li><a href="/photos">फोटोज</a></li>
+                <li><a href="/sampark">संपर्क</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+
+                
+                <!-- <form action="/search" method="GET">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form> -->
+
+                <!-- Removed Search icon -->
+                  <a href="/bhajan" style="color: aliceblue;"><i class="fas fa-search"></i></a>
+    
+                <!-- Dropdown menu (Hamburger) -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dropdown menu content (Sidebar) -->
+        <div class="dropdown-menu" id="dropdown-menu">
+            <div class="close-btn" id="close-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul>
+                <li><a href="/">होम</a></li>
+                <li><a href="/sahitya">साहित्य</a></li>
+                <li><a href="/gramgeeta">ग्रामगीता</a></li>
+                <li><a href="/bhajan">भजन</a></li>
+                <li><a href="/bhajan-books" class="btn-bhajan-books">भजन पुस्तके</a></li>
+                <li><a href="/photos">फोटोज</a></li>
+                <li><a href="/sampark">संपर्क</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/www.tukdyadas.in?mibextid=LQQJ4d"><i class="fab fa-facebook" id="facebook"></i></a>
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2Ftukdyadaso"><i class="fab fa-twitter" id="twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCqINEULnmqJxzq6Mk52n9Og"><i class="fab fa-youtube" id="youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin " id="linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <script src="/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= book.title %></title>
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content: Book Content -->
+    <main>
+        
+        <div class="book-content">
+    
+            <table class="styled-table2">
+                <thead>
+                    
+                    <tr>
+                        
+                        <th>विषय</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% topics.forEach(function(topic) { %>
+                        <tr>
+                            
+                            <td>
+                                <a href="/sahitya/topic/<%= topic.id %>"><%= topic.title %></a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+          
+
+        
+    </main>
+
+        <!-- Footer -->
+        <%- include('partials/footer') %>
+
+</body>
+</html>

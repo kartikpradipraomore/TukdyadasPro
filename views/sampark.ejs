@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>संपर्क</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+        /* Main container with background */
+         #sampark_main {
+            /* background-image: url("/images/sampark2.png"); */
+            background-size: cover;
+            background-position: center; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Styling the purpose section */
+        .purpose-section {
+            width: 70%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: F4E4C1;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .purpose-section h3 {
+            font-size: 28px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .purpose-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Table Styling */
+        .styled-table3 {
+            width: 70%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            font-size: 18px;
+            text-align: left;
+            background-color: F4E4C1;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .styled-table3 th,
+        .styled-table3 td {
+            padding: 10px 15px;
+            text-align: left;
+            color: black;
+        }
+
+        .styled-table3 td {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* Contact Information Styling */
+        .contact-info {
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: F4E4C1;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-info h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+         /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .purpose-section {
+                width: 90%;
+            }
+
+            .styled-table3 {
+                width: 90%;
+                font-size: 16px;
+            }
+
+            .contact-info {
+                width: 90%;
+            }
+
+            .purpose-section h3 {
+                font-size: 22px;
+            }
+
+            .purpose-section p {
+                font-size: 1rem;
+            }
+
+            .styled-table3 td {
+                font-size: 16px;
+            }
+
+            .contact-info h2 {
+                font-size: 22px;
+            }
+
+            .contact-info p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .purpose-section {
+                width: 95%;
+            }
+
+            .styled-table3 {
+                width: 95%;
+            }
+
+            .contact-info {
+                width: 95%;
+            }
+
+            .purpose-section h3 {
+                font-size: 20px;
+            }
+
+            .purpose-section p {
+                font-size: 0.9rem;
+            }
+
+            .styled-table3 td {
+                font-size: 14px;
+            }
+
+            .contact-info h2 {
+                font-size: 20px;
+            }
+
+            .contact-info p {
+                font-size: 14px;
+            }
+             #sampark_main {
+            /* background-image: url("/images/sampark2.png");
+            background-size: cover;
+            background-position: center; */
+            /* padding: 20px; */
+        }
+        }
+    </style> 
+</head>
+<body>
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+
+    
+
+    <!-- Main Content: Sampark Details -->
+    <main id="sampark_main">
+        <section class="purpose-section">
+            <h3>उद्देश !</h3>
+            <p>
+                राष्ट्रसंत तुकडोजी महाराज का जीवन एक प्रेरणास्रोत है जो मानवता, अध्यात्म और समाज सेवा की भावना को प्रकट करता है। इस वेबसाइट का उद्देश्य तुकडोजी महाराज के अद्वितीय विचारों, शिक्षाओं और उनके द्वारा रचित साहित्य को जन-जन तक पहुँचाना है। हम यह प्रयास कर रहे हैं कि उनकी दी गई शिक्षाएँ और उनके विचार समाज के हर वर्ग तक पहुँच सकें और लोग उनके जीवन से प्रेरणा लेकर अपने जीवन में सकारात्मक बदलाव ला सकें।
+            </p>
+        </section>
+
+        <div id="sampark_container">
+            <h1 style="text-align:center;">विशेष सहकार्य</h1>
+            <table class="styled-table3">
+                <tbody>
+                    <tr>
+                        <td>श्री हेमंत टाले</td>
+                        <td>श्री सुनील गाईनकर</td>
+                    </tr>
+                    <tr>
+                        <td>श्री माणिक जी ढोरे</td>
+                        <td>श्री प्रमोदजी जयसिंगपूरे</td>
+                    </tr>
+                    <tr>
+                        <td>अंकुश विलायतकर</td>
+                        <td>कार्तिक मोरे</td>
+                    </tr>
+                    <tr>
+                        <td>श्री होमश्र्वर नानवटकर</td>
+                        <td>श्री नरेश दादा माहुरे</td>
+                    </tr>
+                    <tr>
+                        <td>श्री दिपक नरताम</td>
+                        <td>श्री राहुल इतापुरे</td>
+                    </tr>
+                    <tr>
+                        <td>मोहन मिलमिले</td>
+                        <td>सूरज अप्तुरकर</td>
+                    </tr>
+                    <tr>
+                        <td>भूषण काळे</td>
+                        <td>मृणाली खुमकर</td>
+                    </tr>
+                    <tr>
+                        <td>अनिकेत पोहेकर</td>
+                        <td>स्वप्नील गोमासे</td>
+                    </tr>
+                    <tr>
+                        <td>तेजस गायकवाड</td>
+                        <td>रोशन भोंगळे</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>संपर्क</h2>
+            <p>ई-मेल : admin@tukdyadas.com</p>
+            <p>मो.नो. : +919172340429</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+
+</body>
+</html>
